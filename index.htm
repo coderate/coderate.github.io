@@ -77,7 +77,7 @@
                 data: formData,
                 dataType: 'json',
                 success: function (data) {
-                    var score = data.score;
+                    var score = data.score * 100;
                     // Assuming score ranges from 0 to 1
                     var colorClasses = ['color-red', 'color-orange', 'color-green'];
                     var showScore = '<p>Score: <span class="' + colorClasses[(~~(score / 3 * 10)) - 1] + '">' + score + '</span></p>';
