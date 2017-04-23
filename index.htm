@@ -69,6 +69,8 @@
     $(document).ready(function () {
         $('#code-sending-form').on('submit', function (e) {
             e.preventDefault();
+            $("#result").empty();
+            $("#result").empty().append('Loading...');
             var formData = $(this).serialize();
             var posting = $.ajax({
                 type: 'POST',
@@ -84,7 +86,7 @@
                     $("#result").empty().append(showScore);
                 },
                 error: function (responseData, textStatus, errorThrown) {
-                    alert('POST failed.');
+                    $("#result").empty().append('Error');
                 }
             });
         });
